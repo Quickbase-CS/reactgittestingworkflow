@@ -5,9 +5,9 @@ name: Quickbase-CS CI
 
 on:
   push:
-    branches: ['development']
-  pull_request:
     branches: ['main']
+  pull_request:
+    branches: ['development']
 
 jobs:
   build:
@@ -45,7 +45,7 @@ jobs:
           APP_TOKEN_SECRET: ${{ secrets.APP_TOKEN }} #this should be the secret added to your github repo by the name of APP_TOKEN
           REPO_NAME: 'reactgittestingworkflow'
           OWNER: 'asharma-qb'
-          BRANCH: 'main'
+          BRANCH: 'development'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm i -g deployqbforreact &&  deployqbforreact GITHUB_TOKEN="$GITHUB_TOKEN" OWNER="$OWNER" REPO_NAME="$REPO_NAME" APP_TOKEN="$APP_TOKEN_SECRET" USER_TOKEN="$USER_TOKEN_SECRET" BRANCH="$BRANCH"
