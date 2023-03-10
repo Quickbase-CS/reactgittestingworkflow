@@ -43,8 +43,8 @@ jobs:
         env:
          USER_TOKEN_SECRET: ${{ secrets.USER_TOKEN }} #this should be the secret added to your github repo by the name of USER_TOKEN
          APP_TOKEN_SECRET: ${{ secrets.APP_TOKEN }} #this should be the secret added to your github repo by the name of APP_TOKEN
-         REPO_NAME: ${GITHUB_REPOSITORY#*/}
-         OWNER: "Quickbase-CS"
+         REPO_NAME: ${{ github.event.repository.name }}
+         OWNER: ${{github.repository_owner}}
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm i -g deployqbforreact &&  deployqbforreact GITHUB_TOKEN="$GITHUB_TOKEN" OWNER="$OWNER" REPO_NAME="$REPO_NAME" APP_TOKEN="$APP_TOKEN_SECRET" USER_TOKEN="$USER_TOKEN_SECRET" BRANCH="$BRANCH"
