@@ -44,7 +44,7 @@ jobs:
           USER_TOKEN_SECRET: ${{ secrets.USER_TOKEN }} #this should be the secret added to your github repo by the name of USER_TOKEN
           APP_TOKEN_SECRET: ${{ secrets.APP_TOKEN }} #this should be the secret added to your github repo by the name of APP_TOKEN
           REPO_NAME: 'reactgittestingworkflow'
-          OWNER: 'asharma-qb'
+          OWNER: 'Quickbase-CS'
           BRANCH: 'main'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
